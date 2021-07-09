@@ -1,0 +1,45 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Measure Documentation",
+        "description": "This is an API for Measures",
+        "version": "1.0.0",
+        "contact": {
+            "email": "victorlfonseca@gmail.com"
+        }
+    },
+    "paths": {
+        "/measures": {
+            "get": {
+                "tags": [
+                    "Measure"
+                ],
+                "summary": "List all measures",
+                "description": "List all measures",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
