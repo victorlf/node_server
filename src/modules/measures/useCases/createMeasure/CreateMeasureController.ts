@@ -5,8 +5,11 @@ import { CreateMeasureUseCase } from './CreateMeasureUseCase';
 
 class CreateMeasureController {
     async handle(request: Request, response: Response): Promise<Response> {
-        const { sensor, temperature, pressure, humidity, battery } =
-            request.body;
+        const sensor = request.query.sensor.toString();
+        const temperature = parseFloat(request.query.temperature.toString());
+        const pressure = parseFloat(request.query.pressure.toString());
+        const humidity = parseFloat(request.query.humidity.toString());
+        const battery = parseFloat(request.query.voltage.toString());
 
         const createMeasureUseCase = container.resolve(CreateMeasureUseCase);
 
